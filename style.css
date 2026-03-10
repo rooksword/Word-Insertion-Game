@@ -1,0 +1,225 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  user-select: none;
+}
+
+.display {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 0;
+}
+
+.controls {
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.field label {
+  font-size: 0.875rem;
+  color: #333;
+  cursor: pointer;
+}
+
+input[type="number"] {
+  width: 100%;
+  max-width: 120px;
+  padding: 0.5rem 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.timer-inputs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timer-inputs input {
+  max-width: 4.5rem;
+}
+
+.timer-sep {
+  font-size: 1.25rem;
+  color: #666;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: #333;
+}
+
+.word-type-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.word-type-buttons .word-type {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+  transition: background 0.15s;
+}
+
+.word-type-buttons .word-type.common {
+  background: #1a472a;
+}
+
+.word-type-buttons .word-type.common.active {
+  background: #4ade80;
+  color: #0f172a;
+}
+
+.word-type-buttons .word-type.common.active:hover {
+  background: #6ee7b7;
+}
+
+.word-type-buttons .word-type.uncommon {
+  background: #9a3412;
+}
+
+.word-type-buttons .word-type.uncommon.active {
+  background: #fb923c;
+  color: #0f172a;
+}
+
+.word-type-buttons .word-type.uncommon.active:hover {
+  background: #fdba74;
+}
+
+.word-type-buttons .word-type.rare {
+  background: #7f1d1d;
+}
+
+.word-type-buttons .word-type.rare.active {
+  background: #f87171;
+  color: #0f172a;
+}
+
+.word-type-buttons .word-type.rare.active:hover {
+  background: #fca5a5;
+}
+
+.repeat-times.hidden {
+  display: none;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.actions button {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  border: 1px solid #333;
+  background: #333;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.actions button:hover:not(:disabled) {
+  background: #111;
+}
+
+.actions button:disabled {
+  background: #ccc;
+  border-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+.time-left {
+  margin-bottom: 1rem;
+  display: none;
+}
+
+.time-left.visible {
+  display: block;
+}
+
+.progress-bar {
+  height: 6px;
+  background: #eee;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.35rem;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 100%;
+  background: #333;
+  border-radius: 3px;
+  transform-origin: left;
+  transition: transform 0.1s linear;
+}
+
+.time-left-text {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0;
+}
+
+.word {
+  font-size: 7rem;
+  font-weight: 600;
+  margin: 0;
+  min-height: 2.5rem;
+}
+
+.word.placeholder {
+  color: #bbb;
+}
+
+.status {
+  font-size: 0.8rem;
+  color: #888;
+  margin: 0.5rem 0 0;
+}
