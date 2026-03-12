@@ -89,10 +89,103 @@ input[type="number"]:focus {
   border-color: #333;
 }
 
-.word-type-buttons {
+.word-type-buttons,
+.pos-checkboxes {
   display: flex;
   gap: 0.5rem;
   flex-wrap: wrap;
+}
+
+.pos-checkboxes label {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.pos-checkboxes .tag-example {
+  font-size: 0.75rem;
+  color: #888;
+  font-weight: normal;
+}
+
+.pos-dropdown {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0;
+  background: #fafafa;
+}
+
+.pos-dropdown-summary {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.875rem;
+  color: #333;
+  user-select: none;
+}
+
+.pos-dropdown-summary::-webkit-details-marker {
+  display: none;
+}
+
+.pos-dropdown-summary::before {
+  content: "▸ ";
+  display: inline-block;
+  width: 1em;
+}
+
+.pos-dropdown[open] .pos-dropdown-summary::before {
+  content: "▾ ";
+}
+
+.pos-dropdown .pos-checkboxes {
+  padding: 0.5rem 0.75rem 0.75rem;
+  border-top: 1px solid #eee;
+  max-height: 12rem;
+  overflow-y: auto;
+}
+
+.pos-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.25rem;
+}
+
+.pos-row:last-child {
+  margin-bottom: 0;
+}
+
+.solo-btn {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  font-size: 0.7rem;
+  font-weight: 600;
+  line-height: 1;
+  border: 1px solid #999;
+  border-radius: 3px;
+  background: #fff;
+  color: #666;
+  cursor: pointer;
+}
+
+.solo-btn:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.solo-btn.solo-active {
+  background: #333;
+  border-color: #333;
+  color: #fff;
+}
+
+.pos-row label {
+  margin: 0;
+  flex: 1;
+  min-width: 0;
 }
 
 .word-type-buttons .word-type {
@@ -106,7 +199,7 @@ input[type="number"]:focus {
 }
 
 .word-type-buttons .word-type.common {
-  background: #1a472a;
+  background: #333;
 }
 
 .word-type-buttons .word-type.common.active {
@@ -119,7 +212,7 @@ input[type="number"]:focus {
 }
 
 .word-type-buttons .word-type.uncommon {
-  background: #9a3412;
+  background: #333;
 }
 
 .word-type-buttons .word-type.uncommon.active {
@@ -132,7 +225,7 @@ input[type="number"]:focus {
 }
 
 .word-type-buttons .word-type.rare {
-  background: #7f1d1d;
+  background: #333;
 }
 
 .word-type-buttons .word-type.rare.active {
@@ -212,14 +305,35 @@ input[type="number"]:focus {
   font-weight: 600;
   margin: 0;
   min-height: 2.5rem;
+  max-width: 100%;
+  white-space: nowrap;
 }
 
 .word.placeholder {
   color: #bbb;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .display {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  .word {
+    max-width: calc(100vw - 2rem);
+    width: 100%;
+    box-sizing: border-box;
+    /* Base size; JS scales down only when word would overflow */
+    font-size: 7rem;
+  }
 }
 
 .status {
   font-size: 0.8rem;
   color: #888;
   margin: 0.5rem 0 0;
+}
+
+.status.error {
+  color: #c00;
 }
