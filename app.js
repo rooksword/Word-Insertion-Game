@@ -306,7 +306,7 @@
     wordEl.classList.add("placeholder");
     wordEl.style.fontSize = "";
     toggleBtn.textContent = "Start";
-    if (!wordEl.textContent) statusEl.textContent = "Stopped.";
+    setStatusMessage("Stopped.", false);
   }
 
   toggleBtn.addEventListener("click", function () {
